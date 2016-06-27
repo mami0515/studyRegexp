@@ -1,0 +1,51 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+</head>
+<body>
+
+<!--<script type="text/javascript" src="https://s.yimg.jp/l/jquery/1.11.1/jquery.min.js"></script>-->
+<script type="text/javascript">
+var sample = "コンストラクタ関数を使用すると、logout----machine実行時にその正規表現をコンパイルします。030-0000-0000。正規表現パターンが変わることがわかっている場合や、パターンがわからない場合、ユーザが入力するなど別のソースからパターンを取得する場合は、'コンストラクタ関数'を使用してください。00-0000-0000";
+
+if (sample.match(/\d{3}-\d{4}-\d{4}/)) {
+  console.log("電話番号ある！")
+  console.log(sample.match(/(\d{3}-\d{4}-\d{4})/)[0]);
+}
+if (sample.match(/[0-9]{3}-[0-9]{4}-[0-9]{4}/)) {
+  console.log("電話番号ある！")
+}
+if (sample.match(/[a-z]-+[a-z]/)) {
+  console.log("ハイフン付きアルファベットある！");
+}
+if (sample.match(/login|logout/)) {
+  console.log("loginまたはlogoutがある！");
+}
+if (sample.match(/^'/)) {
+  console.log("先頭に'がある！");
+}
+if (sample.match(/'$/)) {
+  console.log("末尾に'がある！");
+}
+if (sample.match(/'.*'/)) {
+  console.log("'なにか'がある！");
+}
+sample = sample.replace(/\d{2,3}-(\d{4})-(\d{4})/g, "$1-$2");
+console.log(sample);
+
+var sample2 = "login Machine";
+if (sample2.match(/[A-Za-z]\s[A-Za-z]/)) {
+  console.log("アルファベット アルファベットがある！");
+  sample2 = sample2.replace(/(\w+)\s(\w+)/, "$2-$1");
+  console.log(sample2);
+}
+
+var url = "http://news.yahoo.co.jp/pickup/6198597",
+    domain = "";
+domain = url.match(/([^:/?#]+:\/\/[^/?#]+)/)[0];
+console.log(domain);
+</script>
+</body>
+</html>
